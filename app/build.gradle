@@ -20,9 +20,10 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation group: 'com.google.guava', name: 'guava', version: '18.0'
+    implementation 'com.google.guava:guava:18.0'
+    implementation files('/Users/dhritichawla/Desktop/FBU 2018/TA training/android-debugging-challenges/common.jar')
 }

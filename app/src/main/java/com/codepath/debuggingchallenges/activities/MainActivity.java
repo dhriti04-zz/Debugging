@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.codepath.debuggingchallenges.R;
+import com.codepath.debuggingchallenges.*;
 
 public class MainActivity extends AppCompatActivity {
 
