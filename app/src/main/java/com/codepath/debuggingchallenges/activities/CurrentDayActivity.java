@@ -21,7 +21,7 @@ public class CurrentDayActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         System.out.print(cal.get(Calendar.DAY_OF_MONTH));
 
-        tvDay.setText(cal.get(Calendar.DAY_OF_MONTH));
+        tvDay.setText(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 
     }
 

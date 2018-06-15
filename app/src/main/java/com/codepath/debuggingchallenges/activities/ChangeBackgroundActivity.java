@@ -18,8 +18,9 @@ public class ChangeBackgroundActivity extends AppCompatActivity {
     }
 
     public void onGoClick(View view) {
-        View mainView = findViewById(android.R.id.content);
+        View mainView = findViewById(R.id.changeView);
         mainView.setBackgroundColor(getNextColor());
+        mainView.invalidate();
     }
 
     private int getNextColor() {
