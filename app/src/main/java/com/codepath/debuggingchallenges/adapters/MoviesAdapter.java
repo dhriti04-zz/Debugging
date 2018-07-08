@@ -18,6 +18,9 @@ import java.util.List;
 
 public class MoviesAdapter extends ArrayAdapter<Movie> {
 
+    TextView tvName;
+    TextView tvRating;
+
     public MoviesAdapter(Context context, List<Movie> movies) {
         super(context, 0, movies);
     }
@@ -33,8 +36,8 @@ public class MoviesAdapter extends ArrayAdapter<Movie> {
                     .inflate(R.layout.item_movie, parent, false);
         }
         // Lookup view for data population
-        TextView tvName = (TextView) convertView.findViewById(R.id.tvTitle);
-        TextView tvRating = (TextView) convertView.findViewById(R.id.tvRating);
+        tvName = (TextView) convertView.findViewById(R.id.tvTitle);
+        tvRating = (TextView) convertView.findViewById(R.id.tvRating);
         ImageView ivPoster = (ImageView) convertView.findViewById(R.id.ivPoster);
 
 

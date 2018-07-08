@@ -30,10 +30,12 @@ public class MoviesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
+
         lvMovies = (ListView) findViewById(R.id.lvMovies);
 
+        movies = new ArrayList<>();
         // Create the adapter to convert the array to views
-        MoviesAdapter adapter = new MoviesAdapter(this, movies);
+        adapter = new MoviesAdapter(this, movies);
 
         // Attach the adapter to a ListView
         lvMovies.setAdapter(adapter);
@@ -43,15 +45,19 @@ public class MoviesActivity extends AppCompatActivity {
 
 
     private void fetchMovies() {
-        String url = " https://api.themoviedb.org/3/movie/now_playing?api_key=";
+        String url = " https://api.themoviedb.org/3/movie/now_playing?api_key=" + API_KEY;
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, null, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
+                    System.out.println("Hmmmmm is it ?");
+
                     JSONArray moviesJson = response.getJSONArray("results");
                     movies = Movie.fromJSONArray(moviesJson);
+                    adapter.addAll(movies);
                 } catch (JSONException e) {
+                    System.out.println("Hmmmmm not working");
                     e.printStackTrace();
                 }
             }
